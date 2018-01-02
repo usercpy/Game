@@ -23,7 +23,7 @@ public class create : MonoBehaviour {
 		cube = Resources.Load <GameObject>("prefabs/Cube");//动态加载预制体
 		sphere = Resources.Load <GameObject>("prefabs/Sphere");//动态加载预制体
 		cubecopynum = Random.Range (2, 6);//控制cube随机生成的个数
-		spherecopynum = Random.Range (2, 6);//控制cube随机生成的个数
+		spherecopynum = Random.Range (2, 6);//控制shpere随机生成的个数
 		cubecopyArray=new GameObject[cubecopynum];//设置数组的个数
 		spherecopyArray=new GameObject[spherecopynum];//设置数组的个数
 	}
@@ -66,7 +66,10 @@ public class create : MonoBehaviour {
 				if(i==select_manage.bluenum&&select_manage.temp1==true&&cubecopyArray [i].GetComponent<cubeMove> ()==null){
 				cubecopyArray [i].AddComponent<cubeMove> ();
 					cubecopyArray [i].tag = "blueplayer";
+
+
 			}
+				cubecopyArray[i].transform.Find ("Canvas").Find("Text").GetComponent<Text>().text="";
 		}
 	   }
 	}
@@ -78,7 +81,9 @@ public class create : MonoBehaviour {
 					spherecopyArray [i].AddComponent<sphereCollider> ();
 					spherecopyArray [i].tag = "redplayer";
 				}
+				spherecopyArray[i].transform.Find ("Canvas").Find("Text").GetComponent<Text>().text="";
 			}
+
 		}
 	}
 }
