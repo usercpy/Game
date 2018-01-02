@@ -22,7 +22,9 @@ public class select_manage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		vanish_hint();
+        getKeyDownCode();
+
+        vanish_hint();
 	}
 	void vanish_hint()//控制提示6秒消失
 	{
@@ -42,4 +44,24 @@ public class select_manage : MonoBehaviour {
 		select.SetActive (false);//将选择的页面隐藏
 		temp1=true;
 	}
+
+
+    public void getKeyDownCode()
+    {
+        if (Input.anyKeyDown)
+        {
+            //将输入范围控制在小键盘0-9
+            for (int i = 256; i < 266; i++)
+            {
+                KeyCode key = (KeyCode)i;
+                if (Input.GetKeyDown(key))
+                {
+                    Debug.Log(key);
+                    //i就是当前选择的序号
+                    return;
+                }
+            }
+
+        }
+    }
 }

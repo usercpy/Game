@@ -11,7 +11,7 @@ public class cubeMove : MonoBehaviour {
 		cubeRigidbogy = GetComponent<Rigidbody> ();//获取物体身上的刚体
 		//cubeRigidbogy.useGravity = false;//让物体不受重力的影响
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () {
 		cubMove ();//调用移动的函数
