@@ -13,11 +13,11 @@ public class sphereCollider : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnColliderEnter(Collider Other){
+	void OnCollisionEnter(Collision Other){
 		if(Other.gameObject.tag=="red"){
-			print ("sad");
-			this.transform.localScale += new Vector3 (1,1,1);
-
+			print ("asda");
+			this.gameObject.transform.localScale = new Vector3 (4,4,4);
+			//Destroy (Other.gameObject);
 		}
 	}
 }

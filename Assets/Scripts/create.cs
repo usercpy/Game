@@ -65,7 +65,7 @@ public class create : MonoBehaviour {
 		for(int i=0;i<cubecopynum;i++){
 				if(i==select_manage.bluenum&&select_manage.temp1==true&&cubecopyArray [i].GetComponent<cubeMove> ()==null){
 				cubecopyArray [i].AddComponent<cubeMove> ();
-					cubecopyArray [i].tag = "blueplayer";
+					cubecopyArray [i].tag = "blueplayer";// 被选择的蓝色主要人物
 
 
 			}
@@ -79,7 +79,7 @@ public class create : MonoBehaviour {
 				if(i==select_manage.rednum&&select_manage.temp1==true&&spherecopyArray [i].GetComponent<sphereMove> ()==null){
 					spherecopyArray [i].AddComponent<sphereMove> ();
 					spherecopyArray [i].AddComponent<sphereCollider> ();
-					spherecopyArray [i].tag = "redplayer";
+					spherecopyArray [i].tag = "redplayer";//被选择的红色主要人物
 				}
 				spherecopyArray[i].transform.Find ("Canvas").Find("Text").GetComponent<Text>().text="";
 			}
