@@ -66,7 +66,8 @@ public class create : MonoBehaviour {
 		for(int i=0;i<cubecopynum;i++){
 				if(i==select_manage.bluenum&&select_manage.temp1==true&&cubecopyArray [i].GetComponent<cubeMove> ()==null){
 				cubecopyArray [i].AddComponent<cubeMove> ();
-					cubecopyArray [i].tag = "blueplayer";// 被选择的蓝色主要人物
+                    cubecopyArray[i].AddComponent<cubeCollider>();
+                    cubecopyArray [i].tag = "blueplayer";// 被选择的蓝色主要人物
 
 
 			    }
@@ -78,6 +79,7 @@ public class create : MonoBehaviour {
 	}
 	void findshpere(){
 		if (select_manage.temp1 == true) {
+         
 			for(int i=0;i<spherecopynum;i++){
 				if(i==select_manage.rednum&&select_manage.temp1==true&&spherecopyArray [i].GetComponent<sphereMove> ()==null){
 					spherecopyArray [i].AddComponent<sphereMove> ();

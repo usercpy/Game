@@ -5,7 +5,7 @@ using UnityEngine;
 public class sphereMove : MonoBehaviour {
 
 	private Rigidbody sphereRigidbogy;
-    public float speed=1; 
+    public float speed=3; 
 	// Use this for initialization
 	void Start () {
 		//transform.gameObject.AddComponent<Rigidbody> ();//为选中的物体添加刚体
@@ -19,17 +19,17 @@ public class sphereMove : MonoBehaviour {
 	}
 	void spheremove()//物体移动的函数
 	{  
-		if(Input.GetKey(KeyCode.I)){
+		if(Input.GetKey(KeyCode.UpArrow)){
 			sphereRigidbogy.velocity= new Vector3(0,0,1)*speed;
-		}else if(Input.GetKey(KeyCode.K)){
+		}else if(Input.GetKey(KeyCode.DownArrow)){
 			sphereRigidbogy.velocity = new Vector3 (0, 0, -1)*speed;
-		}else if(Input.GetKey(KeyCode.J)){
+		}else if(Input.GetKey(KeyCode.LeftArrow)){
 			sphereRigidbogy.velocity = new Vector3 (-1, 0, 0)*speed;
-		}else if(Input.GetKey(KeyCode.L)){
+		}else if(Input.GetKey(KeyCode.RightArrow)){
 			sphereRigidbogy.velocity = new Vector3 (1, 0,0)*speed;
 		}else{
 			sphereRigidbogy.velocity =new  Vector3 (0, 0, 0);
 		}
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
+      //  transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
     }
 }

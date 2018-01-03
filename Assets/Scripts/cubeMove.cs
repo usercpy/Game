@@ -5,7 +5,7 @@ using UnityEngine;
 public class cubeMove : MonoBehaviour {
 
 	private Rigidbody cubeRigidbogy;
-    public float speed = 1;
+    public float speed = 3;
 	// Use this for initialization
 	void Start () {
 		//transform.gameObject.AddComponent<Rigidbody> ();//为选中的物体添加刚体
@@ -30,6 +30,6 @@ public class cubeMove : MonoBehaviour {
 		}else{
 			cubeRigidbogy.velocity =new  Vector3 (0, 0, 0);
 		}
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
+       // transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
 	}
 }
