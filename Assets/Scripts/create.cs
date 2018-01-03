@@ -22,8 +22,8 @@ public class create : MonoBehaviour {
 	void Start () {
 		cube = Resources.Load <GameObject>("prefabs/Cube");//动态加载预制体
 		sphere = Resources.Load <GameObject>("prefabs/Sphere");//动态加载预制体
-		cubecopynum = Random.Range (2, 6);//控制cube随机生成的个数
-		spherecopynum = Random.Range (2, 6);//控制shpere随机生成的个数
+		cubecopynum = Random.Range (2, 10);//控制cube随机生成的个数
+		spherecopynum = Random.Range (2, 10);//控制shpere随机生成的个数
 		cubecopyArray=new GameObject[cubecopynum];//设置cube数组的个数
 		spherecopyArray=new GameObject[spherecopynum];//设置sphere数组的个数
         copyCube();//调用cube复制的方法

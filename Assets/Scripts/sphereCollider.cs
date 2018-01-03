@@ -4,9 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class sphereCollider : MonoBehaviour {
     float x = 2, y = 2, z = 2;
-   
-    void Start() {
+    Transform gameover;
+    void Awark() {
+        gameover = transform.Find("/select/Game");
+        gameover.gameObject.SetActive(false);
+        print("sdadasdasdfa");
 
+    }
+    void Start() {
+       
     }
     void Update() {
         
@@ -37,6 +43,7 @@ public class sphereCollider : MonoBehaviour {
         else if (Other.gameObject.tag == "blueplayer")
         {
            Time.timeScale = 0;
+
         }
     }
 }

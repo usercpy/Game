@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
 
-    Transform a;
+    Transform aa;
 	void Start () {
-        a = transform.Find("/Game");
-       
+        aa = transform.Find("/select/Game");
+        aa.gameObject.SetActive(false);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (a != null)
-        {
-            print("a");
+        //print("123");
+        if (aa!=null) {
+            print("asd");
         }
     }
 }

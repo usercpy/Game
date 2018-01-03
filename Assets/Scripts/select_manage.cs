@@ -16,7 +16,6 @@ public class  select_manage : MonoBehaviour
     int input;
     void Start()
     {
-        //tip.SetActive(true);
         //初始红色显示，蓝色隐藏
         red.SetActive(true);
         blue.SetActive(false);
@@ -39,17 +38,14 @@ public class  select_manage : MonoBehaviour
                 rednum = input;
                 red.SetActive(false);
                 blue.SetActive(true);
-                //print(rednum);
             }
             else
             {
                 //否则说明当前是选择蓝色数字阶段，赋值给bluenum
                 bluenum = input;
-              //  print(bluenum);
                 blue.SetActive(false);
                 playPhase = true;
-                preparePhase = false;
-                
+                preparePhase = false;    
             }
         }
         judge();
@@ -57,28 +53,21 @@ public class  select_manage : MonoBehaviour
     void judge()
     {
         if (bluenum != -1 && rednum != -1&&playPhase)
-        {    //判断红方与蓝方是否选择好
-           
+        {    //判断红方与蓝方是否选择好   
             temp1 = true;
-          //  print("bluenum" + bluenum + "   " + "rednum" + rednum);
-         //   print(temp1);
-            playPhase = false;
-           
+            playPhase = false;   
         }
     }
     int getKeyDownCode()
     {
         if (Input.anyKeyDown)
         {
-
             //将输入范围控制在小键盘0-9
             for (int i = 256; i < 266; i++)
             {
                 KeyCode key = (KeyCode)i;
                 if (Input.GetKeyDown(key))
                 {
-                    // print((int)key - 256);
-
                     return (i - 256);
                 }
             }

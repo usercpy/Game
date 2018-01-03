@@ -28,10 +28,10 @@ public class cubeCollider : MonoBehaviour {
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, y / 2, this.gameObject.transform.position.z);
             Other.gameObject.SetActive(false);
         }
-        //else if (Other.gameObject.tag == "redplayer")
-        //{
-        //    Time.timeScale = 0;
-        //  //  gameover.SetActive(true);
-        //}
+        else if (Other.gameObject.tag == "redplayer")
+        {
+            Time.timeScale = 0;
+            //  gameover.SetActive(true);
+        }
     }
 }

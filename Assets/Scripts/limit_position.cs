@@ -15,6 +15,7 @@ public class limit_position : MonoBehaviour {
 
     }
     void limit() {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
+        transform.rotation=new Quaternion(0,0,0,0);//  闲置红方与蓝方的角度
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -28, 28));//限制主角移动的范围
     }
 }
