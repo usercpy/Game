@@ -9,7 +9,7 @@ public class create : MonoBehaviour {
 	static public  GameObject [] cubecopyArray;//存储蓝方复制的物体的数组
 	static public  GameObject [] spherecopyArray;//存储红方复制的物体的数组
 	GameObject cube;////定义复制的物体cube
-	GameObject sphere;////定义复制的物体cube
+	GameObject sphere;////定义复制的物体sphere
 	int cubecopynum;//复制的cube的个数
 	int spherecopynum;//复制的shpere的个数
 	float x,y;//存储随机生成的地理坐标 x，y
@@ -24,11 +24,12 @@ public class create : MonoBehaviour {
 		sphere = Resources.Load <GameObject>("prefabs/Sphere");//动态加载预制体
 		cubecopynum = Random.Range (2, 6);//控制cube随机生成的个数
 		spherecopynum = Random.Range (2, 6);//控制shpere随机生成的个数
-		cubecopyArray=new GameObject[cubecopynum];//设置数组的个数
-		spherecopyArray=new GameObject[spherecopynum];//设置数组的个数
-	}
+		cubecopyArray=new GameObject[cubecopynum];//设置cube数组的个数
+		spherecopyArray=new GameObject[spherecopynum];//设置sphere数组的个数
+        copyCube();//调用cube复制的方法
+    }
 	void Update () {
-		copyCube ();//调用cube复制的方法
+	
 		findcube();
 		findshpere ();
 	}
@@ -68,9 +69,11 @@ public class create : MonoBehaviour {
 					cubecopyArray [i].tag = "blueplayer";// 被选择的蓝色主要人物
 
 
-			}
-				cubecopyArray[i].transform.Find ("Canvas").Find("Text").GetComponent<Text>().text="";
-		}
+			    }
+                if (select_manage.rednum!=-1)
+                    //Destroy ( cubecopyArray[i].transform.Find ("Canvas").gameObject);
+                    cubecopyArray[i].transform.Find("Canvas").Find("Text").GetComponent<Text>().text = "";
+            }
 	   }
 	}
 	void findshpere(){

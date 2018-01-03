@@ -5,6 +5,7 @@ using UnityEngine;
 public class cubeMove : MonoBehaviour {
 
 	private Rigidbody cubeRigidbogy;
+    public float speed = 1;
 	// Use this for initialization
 	void Start () {
 		//transform.gameObject.AddComponent<Rigidbody> ();//为选中的物体添加刚体
@@ -19,16 +20,16 @@ public class cubeMove : MonoBehaviour {
 	void cubMove()//物体移动的函数
 	{  
 		if(Input.GetKey(KeyCode.W)){
-			cubeRigidbogy.velocity= new Vector3(0,0,1);
+			cubeRigidbogy.velocity= new Vector3(0,0,1)*speed;
 		}else if(Input.GetKey(KeyCode.S)){
-			cubeRigidbogy.velocity = new Vector3 (0, 0, -1);
+			cubeRigidbogy.velocity = new Vector3 (0, 0, -1)*speed;
 		}else if(Input.GetKey(KeyCode.A)){
-			cubeRigidbogy.velocity = new Vector3 (-1, 0, 0);
+			cubeRigidbogy.velocity = new Vector3 (-1, 0, 0)*speed;
 		}else if(Input.GetKey(KeyCode.D)){
-			cubeRigidbogy.velocity = new Vector3 (1, 0,0);
+			cubeRigidbogy.velocity = new Vector3 (1, 0,0)*speed;
 		}else{
 			cubeRigidbogy.velocity =new  Vector3 (0, 0, 0);
 		}
-
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
 	}
 }
