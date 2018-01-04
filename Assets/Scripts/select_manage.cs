@@ -10,7 +10,6 @@ public class  select_manage : MonoBehaviour
     static public int rednum = -1;//选择的红方的序号
     static public int bluenum = -1;//选择的蓝方的序号
     static public bool temp1 = false;  //表示红蓝主角  是否选择好
-    bool time_tip = false;
     bool preparePhase = false;
     bool playPhase = false;
     int input;
