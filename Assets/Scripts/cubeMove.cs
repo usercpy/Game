@@ -5,7 +5,7 @@ using UnityEngine;
 public class cubeMove : MonoBehaviour {
 
 	private Rigidbody cubeRigidbogy;
-    public float speed = 3;
+    public float speed = 4;
 	void Start () {
 		cubeRigidbogy = GetComponent<Rigidbody> ();//获取物体身上的刚体
 	}

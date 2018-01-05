@@ -32,13 +32,13 @@ public class  select_manage : MonoBehaviour
         {
             //开始准备阶段的游戏代码
             //如果蓝色隐藏,说明当前是选择红色数字阶段，把值付给rednum
-            if (!blue.activeInHierarchy)//如果红方提示出现
+            if (!blue.activeInHierarchy&&input<create.spherecopynum)//如果红方提示出现
             {
                 rednum = input;
                 red.SetActive(false);
                 blue.SetActive(true);
             }
-            else
+            else if(input < create.cubecopynum)
             {
                 //否则说明当前是选择蓝色数字阶段，赋值给bluenum
                 bluenum = input;

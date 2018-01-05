@@ -6,7 +6,7 @@ public class cubeCollider : MonoBehaviour {
 
     float x = 2, y = 2, z = 2;
     public GameObject gameover;
-    public static string str;//gameover时最终显示的页面
+  //  public static string str;//gameover时最终显示的页面
   
     void OnCollisionEnter(Collision Other)
     {

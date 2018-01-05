@@ -10,8 +10,8 @@ public class create : MonoBehaviour {
 	static public  GameObject [] spherecopyArray;//存储红方复制的物体的数组
 	GameObject cube;////定义复制的物体cube
 	GameObject sphere;////定义复制的物体sphere
-	int cubecopynum;//复制的cube的个数
-	int spherecopynum;//复制的shpere的个数
+	public static int cubecopynum=0;//复制的cube的个数
+	public static int spherecopynum=0;//复制的shpere的个数
 	float x,y;//存储随机生成的地理坐标 x，y
 	float x1,y1;
 	bool temp=true;//定义一个标记，用来控制  只进行一次整体的复制
@@ -68,12 +68,13 @@ public class create : MonoBehaviour {
 				cubecopyArray [i].AddComponent<cubeMove> ();
                     cubecopyArray[i].AddComponent<cubeCollider>();
                     cubecopyArray [i].tag = "blueplayer";// 被选择的蓝色主要人物
-
+                  
 
 			    }
                 if (select_manage.rednum!=-1)
                     //Destroy ( cubecopyArray[i].transform.Find ("Canvas").gameObject);
                     cubecopyArray[i].transform.Find("Canvas").Find("Text").GetComponent<Text>().text = "";
+               // select_manage.temp1 = false;
             }
 	   }
 	}
@@ -87,7 +88,9 @@ public class create : MonoBehaviour {
 					spherecopyArray [i].tag = "redplayer";//被选择的红色主要人物
 				}
 				spherecopyArray[i].transform.Find ("Canvas").Find("Text").GetComponent<Text>().text="";
-			}
+              //  select_manage.temp1 = false;
+
+            }
 
 		}
 	}

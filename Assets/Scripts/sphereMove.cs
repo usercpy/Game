@@ -5,22 +5,20 @@ using UnityEngine;
 public class sphereMove : MonoBehaviour {
 
 	private Rigidbody sphereRigidbogy;
-    public float speed=3; 
-	// Use this for initialization
-	void Start () {
-		//transform.gameObject.AddComponent<Rigidbody> ();//为选中的物体添加刚体
-		sphereRigidbogy = GetComponent<Rigidbody> ();//获取物体身上的刚体
-		//sphereRigidbogy.useGravity = false;//让物体不受重力的影响
-	}
-
-	// Update is called once per frame
+    public float speed=4;
+    void Start()
+    {
+        sphereRigidbogy = GetComponent<Rigidbody>();//获取物体身上的刚体
+    }
 	void Update () {
-		spheremove ();//调用移动的函数
+        spheremove ();//调用移动的函数
 	}
 	void spheremove()//物体移动的函数
-	{  
-		if(Input.GetKey(KeyCode.UpArrow)){
-			sphereRigidbogy.velocity= new Vector3(0,0,1)*speed;
+	{
+        
+        if (Input.GetKey(KeyCode.UpArrow)){
+           
+            sphereRigidbogy.velocity= new Vector3(0,0,1)*speed;
 		}else if(Input.GetKey(KeyCode.DownArrow)){
 			sphereRigidbogy.velocity = new Vector3 (0, 0, -1)*speed;
 		}else if(Input.GetKey(KeyCode.LeftArrow)){
@@ -30,6 +28,5 @@ public class sphereMove : MonoBehaviour {
 		}else{
 			sphereRigidbogy.velocity =new  Vector3 (0, 0, 0);
 		}
-      //  transform.position = new Vector3(Mathf.Clamp(transform.position.x, -29, 29), transform.position.y, Mathf.Clamp(transform.position.z, -29, 29));//限制主角移动的范围
     }
 }
